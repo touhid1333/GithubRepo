@@ -22,10 +22,12 @@ public class CommitsViewModel extends ViewModel {
         repository = new CommitsRepository(context);
     }
 
+    //get errors
     public LiveData<Integer> getErrorLiveData() {
         return repository.getErrorLiveData();
     }
 
+    //get commits
     public LiveData<List<CommitsResponse>> getCommitsLiveData() {
         return repository.getCommitsLiveData();
     }

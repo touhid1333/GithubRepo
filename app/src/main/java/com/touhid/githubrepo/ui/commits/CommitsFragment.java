@@ -8,15 +8,11 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.button.MaterialButton;
@@ -76,6 +72,7 @@ public class CommitsFragment extends Fragment {
 
                                 if (commitsResponses != null){
 
+                                    //set up recycler view with adapter and layout manager
                                     CommitsAdapter adapter = new CommitsAdapter(context, commitsResponses, new ChildClickListner() {
                                         @Override
                                         public void onChildClick(View view, int position) {
@@ -85,7 +82,6 @@ public class CommitsFragment extends Fragment {
                                             Variables.userLoginName = selectedUserLoginName;
 
                                             //show a dialog to provide navigate info
-
                                             Dialog dialog = new Dialog(context);
                                             dialog.setContentView(R.layout.dialog_layout);
                                             MaterialButton okBTN = dialog.findViewById(R.id.ok_btn);

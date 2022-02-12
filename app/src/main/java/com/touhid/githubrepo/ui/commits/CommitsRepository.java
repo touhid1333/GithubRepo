@@ -32,6 +32,8 @@ public class CommitsRepository {
         apiInterface = apiClient.getClient().create(ApiInterface.class);
         errorLiveData = new MutableLiveData<>();
         commitsLiveData = new MutableLiveData<>();
+
+        //calling method to get data
         getLastCommits();
     }
 

@@ -20,10 +20,12 @@ public class UserProfileViewModel extends ViewModel {
         repository = new UserProfileRepository(context, userLoginName);
     }
 
+    //get error
     public LiveData<Integer> getErrorLiveData() {
         return repository.getErrorLiveData();
     }
 
+    //get profile info
     public LiveData<UserProfileResponse> getProfileLiveData() {
         return repository.getProfileLiveData();
     }

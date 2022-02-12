@@ -14,19 +14,13 @@ import com.touhid.githubrepo.R;
 import com.touhid.githubrepo.pojo.commitsresponse.CommitsResponse;
 import com.touhid.githubrepo.utils.ChildClickListner;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -54,35 +48,47 @@ public class CommitsAdapter extends RecyclerView.Adapter<CommitsAdapter.CommitsV
 
         if (commits != null){
 
-            String userFullName = commits.get(position).getCommit().getAuthor().getName();
-            String userAvatar = commits.get(position).getAuthor().getAvatarUrl();
-            String commitTitle = commits.get(position).getCommit().getMessage();
-            String commitDateString = commits.get(position).getCommit().getAuthor().getDate();
-
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-
-                ZonedDateTime date1 = ZonedDateTime.parse(commitDateString);
-                ZonedDateTime date2 = ZonedDateTime.now();
-                long diff = ChronoUnit.HOURS.between(date1, date2);
-                if (diff < 24){
-                    holder.commitTimeTV.setText(diff + " hours ago");
-                }else {
-                    DateTimeFormatter inputFormatter = null;
-                    inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
-                    DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.getDefault());
-                    LocalDate date = LocalDate.parse(commitDateString, inputFormatter);
-                    String formattedDate = outputFormatter.format(date);
-                    holder.commitTimeTV.setText(String.valueOf(formattedDate));
-                }
+            //author name init
+            if (commits.get(position).getCommit().getAuthor().getName() != null) {
+                String userFullName = commits.get(position).getCommit().getAuthor().getName();
+                holder.commitUserNameTV.setText(userFullName);
             }
 
-            holder.commitTitleTV.setText(commitTitle);
-            holder.commitUserNameTV.setText(userFullName);
+            //author avatar init
+            if (commits.get(position).getAuthor().getAvatarUrl() != null) {
+                String userAvatar = commits.get(position).getAuthor().getAvatarUrl();
+                Glide.with(context)
+                        .load(userAvatar)
+                        .override(20, 20)
+                        .into(holder.commitUserAvatarIV);
+            }
 
-            Glide.with(context)
-                    .load(userAvatar)
-                    .override(20,20)
-                    .into(holder.commitUserAvatarIV);
+            //commit message init
+            if (commits.get(position).getCommit().getMessage() != null) {
+                String commitTitle = commits.get(position).getCommit().getMessage();
+                holder.commitTitleTV.setText(commitTitle);
+            }
+
+            //date time init
+            if (commits.get(position).getCommit().getAuthor().getDate() != null) {
+                String commitDateString = commits.get(position).getCommit().getAuthor().getDate();
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+                    ZonedDateTime date1 = ZonedDateTime.parse(commitDateString);
+                    ZonedDateTime date2 = ZonedDateTime.now();
+                    long diff = ChronoUnit.HOURS.between(date1, date2);
+                    if (diff < 24) {
+                        holder.commitTimeTV.setText(diff + " hours ago");
+                    } else {
+                        DateTimeFormatter inputFormatter = null;
+                        inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
+                        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.getDefault());
+                        LocalDate date = LocalDate.parse(commitDateString, inputFormatter);
+                        String formattedDate = outputFormatter.format(date);
+                        holder.commitTimeTV.setText(String.valueOf(formattedDate));
+                    }
+                }
+            }
 
         }
 

@@ -26,9 +26,12 @@ public class UserProfileRepository {
         apiInterface = apiClient.getClient().create(ApiInterface.class);
         errorLiveData = new MutableLiveData<>();
         profileLiveData = new MutableLiveData<>();
+
+        //call method to get data
         getUserProfile(userLoginName);
     }
 
+    //get user public profile info
     private void getUserProfile(String userLoginName){
 
         Call<UserProfileResponse> call = apiInterface.getUserProfile(userLoginName);

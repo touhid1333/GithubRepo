@@ -2,6 +2,7 @@ package com.touhid.githubrepo.utils;
 
 public class Variables {
 
+    //default value
     public static String userLoginName = "touhid1333";
 
     /**

@@ -96,8 +96,8 @@ public class UserProfileFragment extends Fragment {
 
                                     }
 
-
                                     binding.userReposTv.setText(String.valueOf(userProfileResponse.getPublicRepos()));
+
                                     binding.userGistTv.setText(String.valueOf(userProfileResponse.getPublicGists()));
 
                                 }
