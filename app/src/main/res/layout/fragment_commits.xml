@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.commits.CommitsFragment">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commit_headline_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/flutter_commit_list"
+        android:textColor="@color/white"
+        android:textSize="@dimen/seventeen_sp"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginStart="@dimen/ten"/>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commit_branch_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/commit_headline_tv"
+        android:text="@string/master"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:background="@drawable/branch_background"
+        android:paddingStart="@dimen/seven"
+        android:paddingEnd="@dimen/seven"
+        android:paddingBottom="@dimen/two"
+        android:layout_marginStart="@dimen/twelve"
+        android:textSize="@dimen/seventeen_sp"
+        android:layout_marginTop="@dimen/ten"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commit_list_rv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero"
+        app:layout_constraintTop_toBottomOf="@+id/commit_headline_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginBottom="@dimen/ten"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.UserProfileFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_avatar_iv"
+        android:layout_width="@dimen/one_hundred_sixty_eight"
+        android:layout_height="@dimen/one_hundred_sixty_eight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/thirty"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/user_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/user_avatar_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/twenty_four_sp"
+        android:layout_marginTop="@dimen/sixteen"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/user_login_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fourteen_sp"
+        android:layout_marginTop="@dimen/five"/>
+
+    <LinearLayout
+        android:id="@+id/bio_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/user_login_name_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/sixteen"
+        android:paddingStart="@dimen/ten"
+        android:paddingEnd="@dimen/ten">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bio"
+            android:textColor="@color/white"
+            android:textSize="@dimen/seventeen_sp"
+            android:layout_marginEnd="@dimen/five"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/user_bio_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/seventeen_sp"
+            android:layout_marginStart="@dimen/five"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/repos_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/bio_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/sixteen">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/public_repos"
+            android:textColor="@color/white"
+            android:textSize="@dimen/seventeen_sp"
+            android:layout_marginEnd="@dimen/five"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/user_repos_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/seventeen_sp"
+            android:layout_marginStart="@dimen/five"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/gist_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/repos_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/eight">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/public_gists"
+            android:textColor="@color/white"
+            android:textSize="@dimen/seventeen_sp"
+            android:layout_marginEnd="@dimen/five"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/user_gist_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/seventeen_sp"
+            android:layout_marginStart="@dimen/five"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

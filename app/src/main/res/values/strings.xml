@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GithubRepo</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="info_text">Navigate to user profile to view your selected user..</string>
+    <string name="ok_btn">OK</string>
+    <string name="flutter_commit_list">Flutter Commit List</string>
+    <string name="master">master</string>
+    <string name="bio">Bio:</string>
+    <string name="public_repos">Public Repos:</string>
+    <string name="public_gists">Public Gists:</string>
+    <string name="commits">Commits</string>
+    <string name="user_profile">User Profile</string>
+</resources>

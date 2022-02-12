@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/selectableItemBackground">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commits_title_tv"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/commits_time_tv"
+        android:textColor="@color/white"
+        android:textSize="@dimen/seventeen_sp"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginStart="@dimen/ten"
+        android:layout_marginEnd="@dimen/ten"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commits_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/commits_title_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/primary_black_text"
+        android:textSize="@dimen/twelve_sp"
+        android:layout_marginEnd="@dimen/ten"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/commit_user_avatar"
+        android:layout_width="@dimen/twenty"
+        android:layout_height="@dimen/twenty"
+        app:layout_constraintTop_toBottomOf="@+id/commits_title_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/seven"
+        android:layout_marginStart="@dimen/ten"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commit_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/commit_user_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/commit_user_avatar"
+        app:layout_constraintStart_toEndOf="@+id/commit_user_avatar"
+        android:textColor="@color/primary_black_text"
+        android:textSize="@dimen/twelve_sp"
+        android:layout_marginStart="@dimen/seven"
+        android:layout_marginEnd="@dimen/ten"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one"
+        android:background="@color/primary_black_off"
+        android:layout_marginTop="@dimen/ten"
+        app:layout_constraintTop_toBottomOf="@+id/commit_user_avatar"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

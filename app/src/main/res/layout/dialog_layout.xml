@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/two_hundred_eighty"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/primary_black_500">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/ten"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/twenty_sp"
+        android:textStyle="bold"
+        android:background="@color/primary_black_700"/>
+
+    <TextView
+        android:id="@+id/warning_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ten"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sixteen_sp"
+        android:textStyle="bold"
+        android:text="@string/info_text"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ok_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:text="@string/ok_btn"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:backgroundTint="@color/accent_500"/>
+
+
+</LinearLayout>

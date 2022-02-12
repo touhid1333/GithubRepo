@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_commits">
+
+    <fragment
+        android:id="@+id/navigation_commits"
+        android:name="com.touhid.githubrepo.ui.commits.CommitsFragment"
+        android:label="@string/commits"
+        tools:layout="@layout/fragment_commits" />
+
+    <fragment
+        android:id="@+id/navigation_user_profile"
+        android:name="com.touhid.githubrepo.ui.profile.UserProfileFragment"
+        android:label="@string/user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+
+</navigation>
